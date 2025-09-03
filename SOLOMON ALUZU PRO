@@ -1,0 +1,24 @@
+!DOCTYPE html>
+<html>
+<head>
+    <title>ARMANI'S PHOTOGRAPHY</title>
+</head>
+<body>
+    <h1>Welcome to the ARMANI'S STUDIO</h1>
+    <h3>ABOUT ARMANI'S PHOTOGRAPHY</h3>
+    <h3>Armani's photography is a professional photography business based in warri,Delta State specializing in capturing unforgetabkle moments</h3>
+    <h3>Our services includes</h3>
+    <h3>Events photography 
+        portrait sessions 
+         commercial photography
+         lifestyle photography</h3>
+    <p>Marketing Strategy</p>
+    <h3>branding 
+        content creaction</h3>
+    <form action="guess" method="post">
+        <label>Enter your guess:</label>
+        <input type="text" name="guess">
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>
