@@ -1,0 +1,43 @@
+pipeline {
+    agent any
+
+    tools {
+        maven 'Maven3'   // Must be set up in Jenkins "Global Tools"
+        jdk 'Java17'     // Must be set up in Jenkins "Global Tools"
+    }
+
+    stages {
+        stage('Checkout') {
+            steps {
+                git branch: 'main',
+                    url: 'https://github.com/Niquad/ceeyitsolutions-proj-g16.git'
+            }
+        }
+
+        stage('Build') {
+            steps {
+                sh 'mvn clean install'
+            }
+        }
+
+        stage('Test') {
+            steps {
+                sh 'mvn test'
+            }
+        }
+
+        stage('Package') {
+            steps {
+                echo 'Packaging WAR file...'
+                sh 'ls -l target/*.war || echo "No WAR file found"'
+            }
+        }
+
+        stage('Deploy') {
+            steps {
+                echo 'Deploying WAR to Tomcat...'
+                // Example: sh 'cp target/NumberGuessGame.war /opt/tomcat/webapps/'
+            }
+        }
+    }
+}
